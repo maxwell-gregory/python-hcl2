@@ -22,7 +22,7 @@ class DictTransformer(Transformer):
 
     def expr_term(self, args: List) -> Any:
         args = self.strip_new_line_tokens(args)
-
+        print("ARGS", args)
         #
         if args[0] == "true":
             return True
