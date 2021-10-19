@@ -29,6 +29,7 @@ class DictTransformer(Transformer):
         if args[0] == "false":
             return False
         if args[0] == "null":
+            print("NULLERINO")
             return None
 
         # if the expression starts with a paren then unwrap it
@@ -52,6 +53,7 @@ class DictTransformer(Transformer):
         return "%s.*.%s" % (args[0], args[1])
 
     def tuple(self, args: List) -> List:
+        print("LIST", args)
         return [self.to_string_dollar(arg) for arg in self.strip_new_line_tokens(args)]
 
     def object_elem(self, args: List) -> Dict:
