@@ -20,6 +20,7 @@ binary_term : binary_operator new_line_or_comment? expression
 expr_term : "(" new_line_or_comment? expression new_line_or_comment? ")"
             | float_lit
             | int_lit
+            | "null"
             | STRING_LIT
             | tuple
             | object
@@ -33,7 +34,7 @@ expr_term : "(" new_line_or_comment? expression new_line_or_comment? ")"
             | full_splat_expr_term
             | for_tuple_expr
             | for_object_expr
-            | "null"
+            
 
 STRING_LIT : "\"" (STRING_CHARS | INTERPOLATION)* "\""
 STRING_CHARS : /(?:(?!\${)([^"\\]|\\.))+/+ // any character except '"" unless inside a interpolation string
