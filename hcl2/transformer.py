@@ -57,6 +57,7 @@ class DictTransformer(Transformer):
     def object_elem(self, args: List) -> Dict:
         # This returns a dict with a single key/value pair to make it easier to merge these
         # into a bigger dict that is returned by the "object" function
+        print("DICT", args)
         key = self.strip_quotes(args[0])
         value = self.to_string_dollar(args[1])
 
